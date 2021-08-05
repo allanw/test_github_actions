@@ -31,7 +31,8 @@ def clickItem(xpathstr):
     item = driver.find_element_by_xpath(xpathstr)
     webdriver.ActionChains(driver).click(item).perform()
 
-
+time.sleep(10)
+    
 # Enter email - press tab
 webdriver.ActionChains(driver).send_keys(email).key_down(Keys.TAB).key_up(Keys.TAB).perform()
 time.sleep(1)
