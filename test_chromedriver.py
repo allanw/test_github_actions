@@ -31,6 +31,8 @@ def clickItem(xpathstr):
     webdriver.ActionChains(driver).click(item).perform()
 
 time.sleep(10)
+
+print(driver.page_source.encode("utf-8"))
     
 un = driver.find_element_by_id("username")
 pw = driver.find_element_by_id("password")
