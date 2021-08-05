@@ -35,6 +35,8 @@ def clickItem(xpathstr):
 # time.sleep(10)
 time.sleep(10)
 
+print(driver.page_source.encode("utf-8"))
+
 # Enter email - press tab
 webdriver.ActionChains(driver).send_keys(email).key_down(Keys.TAB).key_up(Keys.TAB).perform()
 time.sleep(1)
