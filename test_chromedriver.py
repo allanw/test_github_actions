@@ -18,6 +18,7 @@ chrome_options = Options()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(options=chrome_options)
 driver.get(webAddress)
+print("HELLO")
 print(driver.page_source.encode("utf-8"))
 
 def clickItem(xpathstr):
