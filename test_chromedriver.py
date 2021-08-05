@@ -16,6 +16,7 @@ password = os.environ.get("MY_SECRET")
 
 chrome_options = Options()
 chrome_options.add_argument('--headless')
+chrome_options.add_argument("user-agent=User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/507.06 Safari/507.06")
 driver = webdriver.Chrome(options=chrome_options)
 driver.get(webAddress)
 print("HELLO")
