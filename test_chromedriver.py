@@ -32,13 +32,12 @@ def clickItem(xpathstr):
 
 time.sleep(10)
     
-# Enter email - press tab
-webdriver.ActionChains(driver).send_keys(email).key_down(Keys.TAB).key_up(Keys.TAB).perform()
-time.sleep(1)
-
-# Enter password - press enter
-webdriver.ActionChains(driver).send_keys(password).key_down(Keys.ENTER).key_up(Keys.ENTER).perform()
-time.sleep(10)
+un = driver.find_element_by_id("username")
+pw = driver.find_element_by_id("password")
+un.send_keys(email)
+pw.send_keys(password)
+login_attempt = driver.find_element_by_xpath("//*[@type='submit']")
+login_attempt.submit()
 
 print(driver.page_source.encode("utf-8"))
 
