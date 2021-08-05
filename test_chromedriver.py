@@ -19,7 +19,6 @@ chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(options=chrome_options)
 driver.get(webAddress)
 print("HELLO")
-print(driver.page_source.encode("utf-8"))
 
 def clickItem(xpathstr):
     """ Click on a web element using selenium
@@ -32,6 +31,8 @@ def clickItem(xpathstr):
     webdriver.ActionChains(driver).click(item).perform()
 
 time.sleep(10)
+
+print(driver.page_source.encode("utf-8"))
     
 # Enter email - press tab
 webdriver.ActionChains(driver).send_keys(email).key_down(Keys.TAB).key_up(Keys.TAB).perform()
