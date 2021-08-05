@@ -16,7 +16,7 @@ password = os.environ.get("MY_SECRET")
 
 chrome_options = Options()
 chrome_options.add_argument('--headless')
-chrome_options.add_argument('--user-agent="Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166"')
+chrome_options.add_argument('--user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"')
 driver = webdriver.Chrome(options=chrome_options)
 driver.get(webAddress)
 print("HELLO")
