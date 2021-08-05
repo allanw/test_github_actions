@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import os
 import time
+from fake_useragent import UserAgent
 
 
 #################
@@ -14,9 +15,12 @@ webAddress = "https://connect.garmin.com/"
 email = 'al.whatmough@gmail.com'
 password = os.environ.get("MY_SECRET")
 
+ua = UserAgent()
+user_agent = ua.random
+
 chrome_options = Options()
 chrome_options.add_argument('--headless')
-chrome_options.add_argument('--user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"')
+chrome_options.add_argument(f'user-agent={user_agent}')
 driver = webdriver.Chrome(options=chrome_options)
 driver.get(webAddress)
 print("HELLO")
