@@ -3,7 +3,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import os
 import time
-from fake_useragent import UserAgent
 
 
 #################
@@ -11,16 +10,12 @@ from fake_useragent import UserAgent
 #################
 
 # Garmin Connect - Creds
-webAddress = "https://connect.garmin.com/"
+webAddress = "https://connect.garmin.com/signin"
 email = 'al.whatmough@gmail.com'
 password = os.environ.get("MY_SECRET")
 
-ua = UserAgent()
-user_agent = ua.random
-
 chrome_options = Options()
 chrome_options.add_argument('--headless')
-chrome_options.add_argument(f'user-agent={user_agent}')
 driver = webdriver.Chrome(options=chrome_options)
 driver.get(webAddress)
 print("HELLO")
@@ -36,9 +31,6 @@ def clickItem(xpathstr):
     item = driver.find_element_by_xpath(xpathstr)
     webdriver.ActionChains(driver).click(item).perform()
 
-# Click login button
-clickItem("""//*[@id="___gatsby"]/div/div/header/nav/ul/li[4]/a/button""")
-time.sleep(10)
 
 # Enter email - press tab
 webdriver.ActionChains(driver).send_keys(email).key_down(Keys.TAB).key_up(Keys.TAB).perform()
