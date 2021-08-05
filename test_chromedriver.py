@@ -31,8 +31,6 @@ def clickItem(xpathstr):
     webdriver.ActionChains(driver).click(item).perform()
 
 time.sleep(10)
-
-print(driver.page_source.encode("utf-8"))
     
 # Enter email - press tab
 webdriver.ActionChains(driver).send_keys(email).key_down(Keys.TAB).key_up(Keys.TAB).perform()
@@ -41,6 +39,8 @@ time.sleep(1)
 # Enter password - press enter
 webdriver.ActionChains(driver).send_keys(password).key_down(Keys.ENTER).key_up(Keys.ENTER).perform()
 time.sleep(10)
+
+print(driver.page_source.encode("utf-8"))
 
 driver.get('https://connect.garmin.com/modern/activity/7224500180')
 
