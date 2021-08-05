@@ -27,6 +27,8 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           
       - name: Test chromedriver
+        env: # Or as an environment variable
+          super_secret: ${{ secrets.SuperSecret }}
         run: python test_chromedriver.py
         
       - name: Commit and push if it changed
